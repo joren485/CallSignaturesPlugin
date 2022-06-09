@@ -1,0 +1,21 @@
+---
+
+signature:
+  technique: "RP0"
+  description: >
+      This Call Signature can be used to search for
+      usage of reg.exe commands, that implement RP0.
+  rules:
+      - element: "any argument"
+        contains: "reg"
+
+      - element: "any argument"
+        contains: "add"
+
+      - element: "any argument"
+        contains_in:
+          - "HKCU"
+          - "HKEY_CURRENT_USER"
+
+      - element: "any argument"
+        contains: "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"

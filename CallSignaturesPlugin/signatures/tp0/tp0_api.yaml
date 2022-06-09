@@ -1,0 +1,27 @@
+---
+
+signature:
+    technique: "TP0"
+    description: >
+      This Call Signature can be used to
+      search for calls to CoCreateInstance.
+    rules:
+        - element: "function name"
+          equals: "CoCreateInstance"
+
+        - element: "number of arguments"
+          equals: 5
+
+        - element: "argument"
+          argument_index: 0
+          in:
+            - "2A D5 8B 14 AB A2 CE 11 B1 1F 00 AA 00 53 05 03"
+            - "9F 36 87 0F E5 A4 FC 4C BD 3E 73 E6 15 45 72 DD"
+          type: "bytes"
+
+        - element: "argument"
+          argument_index: 3
+          in:
+            - "27 D5 8B 14 AB A2 CE 11 B1 1F 00 AA 00 53 05 03"
+            - "C7 A4 AB 2F A9 4D 13 40 96 97 20 CC 3F D4 0F 85"
+          type: "bytes"

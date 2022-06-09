@@ -1,0 +1,13 @@
+---
+
+signature:
+    technique: "TP0"
+    description: >
+      This Call Signature can be used to
+      search for usage of schtasks.exe commands.
+    rules:
+        - element: "any argument"
+          contains: "schtasks"
+
+        - element: "any argument"
+          contains: "/create"

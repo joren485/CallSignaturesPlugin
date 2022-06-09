@@ -1,0 +1,24 @@
+---
+
+signature:
+  technique: "RP0"
+  description: >
+      This Call Signature can be used to
+      search for calls to RegCreateKey or RegOpenKey,
+      that are used to implement RP0.
+  rules:
+      - element: "function name"
+        contains_in:
+          - "RegCreateKey"
+          - "RegOpenKey"
+
+      - element: "number of arguments"
+        equals: 3
+
+      - element: "argument"
+        argument_index: 0
+        equals: 0x80000001
+
+      - element: "argument"
+        argument_index: 1
+        contains: "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"

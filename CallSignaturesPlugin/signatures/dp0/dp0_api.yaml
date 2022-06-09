@@ -1,0 +1,18 @@
+---
+
+signature:
+    technique: "DP0"
+    description: >
+      This Call Signature can be used to
+      search for calls to SHGetKnownFolderPath.
+    rules:
+        - element: "function name"
+          equals: "SHGetKnownFolderPath"
+
+        - element: "number of arguments"
+          equals: 4
+
+        - element: "argument"
+          argument_index: 0
+          equals: "BB 20 7D B9 6A F4 97 4C BA 10 5E 36 08 43 08 54"
+          type: "bytes"

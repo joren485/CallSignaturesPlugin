@@ -1,0 +1,17 @@
+---
+
+signature:
+    technique: "DP0"
+    description: >
+      This Call Signature can be used to
+      search for calls to SHGetSpecialFolderPath.
+    rules:
+        - element: "function name"
+          contains: "SHGetSpecialFolderPath"
+
+        - element: "number of arguments"
+          equals: 4
+
+        - element: "argument"
+          argument_index: 2
+          equals: 0x07

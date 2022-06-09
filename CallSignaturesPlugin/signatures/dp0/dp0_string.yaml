@@ -1,0 +1,11 @@
+---
+
+signature:
+    technique: "DP0"
+    description: >
+      This Call Signature can be used to
+      search for calls that directly use the path of
+      the startup directory in a user's directory.
+    rules:
+        - element: "any argument"
+          contains: "AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"

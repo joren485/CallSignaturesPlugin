@@ -1,0 +1,21 @@
+---
+
+signature:
+  technique: "SP0"
+  description: >
+      This Call Signature can be used to search for
+      usage of reg.exe commands, that implement SP0.
+  rules:
+      - element: "any argument"
+        contains: "reg"
+
+      - element: "any argument"
+        contains: "add"
+
+      - element: "any argument"
+        contains_in:
+          - "HKLM"
+          - "HKEY_LOCAL_MACHINE"
+
+      - element: "any argument"
+        contains: "SYSTEM\\CurrentControlSet\\Services"

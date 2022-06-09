@@ -1,0 +1,17 @@
+---
+
+signature:
+    technique: "SP0"
+    description: >
+      This Call Signature can be used to
+      search for calls to CreateService.
+    rules:
+        - element: "function name"
+          contains: "CreateService"
+
+        - element: "number of arguments"
+          equals: 13
+
+        - element: "argument"
+          argument_index: 5
+          equals: 0x00000002
